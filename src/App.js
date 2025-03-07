@@ -13,13 +13,9 @@ function App() {
   }, [page]);
 
   const fetchCharacters = async (page) => {
-    console.log("this is the page " + page);
     let res = await fetch(`https://swapi.dev/api/people/?page=${page}`);
-    console.log("This is the res" + res);
     let data = await res.json();
-    console.log(data);
     setCharacters(data.results);
-    console.log("This is the data" + data.results);
   };
 
   const handleNext = () => {
